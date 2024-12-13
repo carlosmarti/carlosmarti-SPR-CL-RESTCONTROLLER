@@ -47,10 +47,11 @@ public class SampleController {
      * should respond with "1".
      */
     @GetMapping("/long/{id}")
-    public long getPathVariable(){
+    public long getPathVariable(@PathVariable int id){
         //you will need to change the method's parameters and return the extracted path variable.
-        return 0;
+        return id;
     }
+    
     /**
      * TODO: extract the request body and respond with it.
      * Similarly to how path variables are extracted with an annotation, request bodies may be extracted in a similar
@@ -74,8 +75,8 @@ public class SampleController {
      * }
      */
     @PostMapping(value = "/requestbody")
-    public Sample postSample(){
+    public Sample postSample(@RequestBody Sample rb){
         //you will need to change the method's parameters and return the extracted request body.
-        return null;
+        return rb;
     }
 }
